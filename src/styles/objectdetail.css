@@ -1,0 +1,246 @@
+.object-detail {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.breadcrumb {
+  margin-bottom: 2rem;
+  color: var(--secondary-color);
+}
+
+.breadcrumb a {
+  color: var(--accent-color);
+}
+
+.breadcrumb a:hover {
+  text-decoration: underline;
+}
+
+.object-header {
+  margin-bottom: 2rem;
+}
+
+.object-header h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: var(--primary-color);
+}
+
+.object-header .artist {
+  font-size: 1.125rem;
+  color: var(--secondary-color);
+  font-weight: 500;
+}
+
+.object-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: start;
+  padding: 0;
+}
+
+.object-image-container {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  display: block;
+  overflow: hidden;
+  background-color: var(--background-color);
+  position: relative;
+  aspect-ratio: 1/1;
+}
+
+.detail-image {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  margin: 0;
+  padding: 0;
+}
+
+.no-image {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--secondary-color);
+  font-size: 0.875rem;
+}
+
+.info-section {
+  background: white;
+  padding: 1.5rem;
+  border-radius: var(--border-radius);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  margin-bottom: 1.5rem;
+}
+
+.info-section h3 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: var(--primary-color);
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.info-section dl {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.75rem 1.5rem;
+}
+
+.info-section dt {
+  font-weight: 500;
+  color: var(--secondary-color);
+}
+
+.info-section dd {
+  color: var(--primary-color);
+}
+
+.additional-images {
+  margin-top: 2rem;
+}
+
+.additional-images h3 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: var(--primary-color);
+}
+
+.images-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 1rem;
+}
+
+.images-grid > div {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1/1;
+  background-color: var(--background-color);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+}
+
+.images-grid img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: var(--transition);
+}
+
+.images-grid > div:hover img {
+  transform: scale(1.05);
+}
+
+@media (max-width: 1024px) {
+  .object-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .object-detail {
+    padding: 1rem;
+  }
+
+  .object-header h1 {
+    font-size: 1.5rem;
+  }
+
+  .object-header .artist {
+    font-size: 1rem;
+  }
+
+  .info-section {
+    padding: 1rem;
+  }
+
+  .info-section dl {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+  }
+
+  .info-section dt {
+    color: var(--primary-color);
+    margin-top: 0.75rem;
+  }
+
+  .info-section dd {
+    color: var(--secondary-color);
+    margin-bottom: 0.5rem;
+  }
+
+  .images-grid {
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  }
+
+  .images-grid img {
+    height: 120px;
+  }
+}
+
+.image-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  cursor: pointer;
+}
+
+.modal-content {
+  position: relative;
+  max-width: 90%;
+  max-height: 90vh;
+}
+
+.modal-content img {
+  max-width: 100%;
+  max-height: 90vh;
+  object-fit: contain;
+}
+
+.close-modal {
+  position: absolute;
+  top: -40px;
+  right: 0;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 2rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  line-height: 1;
+}
+
+.close-modal:hover {
+  color: var(--accent-color);
+}
+
+@media (max-width: 768px) {
+  .modal-content {
+    max-width: 95%;
+  }
+  
+  .close-modal {
+    top: -35px;
+    right: 0;
+  }
+} 

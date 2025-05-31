@@ -1,0 +1,66 @@
+:root {
+  --primary-color: #1a1a1a;
+  --secondary-color: #4a4a4a;
+  --accent-color: #552834;
+  --background-color: #f6f3f3;
+  --text-color: #1a1a1a;
+  --border-color: #e5e5e5;
+  --error-color: #ef4444;
+  --success-color: #22c55e;
+  --font-family: system-ui, -apple-system, "Segoe UI", Roboto, Ubuntu, Cantarell, "Noto Sans", sans-serif;
+  --border-radius: 8px;
+  --transition: all 0.3s ease;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-family);
+  color: var(--text-color);
+  line-height: 1.5;
+  background-color: var(--background-color);
+}
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+  padding: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+button {
+  cursor: pointer;
+  font-family: inherit;
+  border: none;
+  background: none;
+  transition: var(--transition);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.error-message {
+  color: var(--error-color);
+  text-align: center;
+  padding: 2rem;
+  background-color: #fef2f2;
+  border-radius: var(--border-radius);
+  margin: 2rem auto;
+  max-width: 600px;
+} 
